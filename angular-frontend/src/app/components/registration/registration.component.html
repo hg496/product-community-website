@@ -1,0 +1,54 @@
+<h2 mat-dialog-title><strong>Registration</strong></h2>
+<hr>
+<p>Register with your email and password:</p>
+<div mat-dialog-content class="example-container">
+  <form [formGroup]="userForm">
+    <mat-form-field appearance="fill" id="mat-form-field-email">
+      <mat-label>Email</mat-label>
+      <input formControlName="emailID" type="email" matInput placeholder="pat@example.com" required>
+      <mat-error *ngIf="userForm.controls['emailID'].errors?.['required']">Email ID is required!</mat-error>
+      <mat-error *ngIf="userForm.controls['emailID'].errors?.['pattern']">This field is invalid!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" id="mat-form-field-first-name">
+      <mat-label>First name</mat-label>
+      <input formControlName="firstName" type="text" matInput required>
+      <mat-error *ngIf="userForm.controls['firstName'].errors?.['required']">Password is required!</mat-error>
+      <mat-error *ngIf="userForm.controls['firstName'].errors?.['maxlength']">Firstname can't be longer than 50
+        characters!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" id="mat-form-field-last-name">
+      <mat-label>Last name</mat-label>
+      <input formControlName="lastName" type="text" matInput required>
+      <mat-error *ngIf="userForm.controls['lastName'].errors?.['required']">Password is required!</mat-error>
+      <mat-error *ngIf="userForm.controls['lastName'].errors?.['maxlength']">Lastname can't be longer than 50
+        characters!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" id="mat-form-field-password">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" type="password" matInput required>
+      <mat-error *ngIf="userForm.controls['password'].errors?.['required']">Password is required!</mat-error>
+      <mat-error *ngIf="userForm.controls['password'].errors?.['minlength']">Password should be longer than 6
+        characters!</mat-error>
+      <mat-error *ngIf="userForm.controls['password'].errors?.['maxlength']">Password can't be longer than 16
+        characters!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" id="mat-form-field-confirm-password">
+      <mat-label>Confirm passward</mat-label>
+      <input formControlName="confirm_password" type="password" id="confirm_password" matInput required>
+      <mat-error *ngIf="userForm.controls['confirm_password'].errors?.['required']">Password is required!</mat-error>
+      <mat-error *ngIf="userForm.controls['confirm_password'].errors?.['minlength']">Password should be longer than 6
+        characters!</mat-error>
+      <mat-error *ngIf="userForm.controls['confirm_password'].errors?.['maxlength']">Password can't be longer than 16
+        characters!</mat-error>
+      <mat-error *ngIf="userForm.controls['confirm_password'].errors?.['not_matching']">The password doesn't match!
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'center'">
+  <button mat-raised-button type="reset" mat-dialog-close>Close</button>
+  <button mat-raised-button type="submit" (click)="registerUser()">SUBMIT</button>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <a mat-button (click)="loginPage()">Have an account already?</a>
+</div>

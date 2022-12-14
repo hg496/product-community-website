@@ -1,0 +1,23 @@
+<mat-toolbar>
+  <mat-icon>account_circle</mat-icon>
+  <span>Welcome! Akshay</span>
+  <div class="form-container">
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Search the Community</mat-label>
+      <input matInput placeholder="Placeholder">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  <span class="example-spacer"></span>
+  <button mat-button routerLink="/login" >Logout</button>
+  <button mat-button routerLink="">Register</button>
+</mat-toolbar>
+<div>
+  <img [src]="homepage_image" alt="">
+</div>
+<div class="homepage-info">
+  <h1>THE COMMUNITY</h1>
+  <p>Find Solutions, Ask Questions, Share Ideas. <br>
+    Connect with users across the world.
+  </p>
+</div>

@@ -1,0 +1,61 @@
+.example-container
+  text-align: center
+
+#mat-form-field-email
+  width: 60%
+
+h2
+  margin-bottom: 0
+hr
+  margin-top: 0
+  margin-bottom: 50px
+
+p
+  text-align: center
+  margin-bottom: 20px
+
+@mixin mat-field-left-style()
+  margin-left: 20%
+  margin-right: 2.5%
+  width: 27.5%
+
+@mixin mat-field-right-style()
+  margin-right: 20%
+  margin-left: 2.5%
+  width: 27.5%
+
+#mat-form-field-first-name 
+  @include mat-field-left-style
+
+#mat-form-field-last-name
+  @include mat-field-right-style
+
+#mat-form-field-password
+  @include mat-field-left-style
+
+#mat-form-field-confirm-password
+  @include mat-field-right-style
+
+
+
+@mixin btnStyle($bgColor)
+  background-color: $bgColor
+  color: #fff
+  padding: 0 30px 0 30px
+  border-radius: 20px
+
+button:first-child
+  @include btnStyle(#e84118)
+  &:hover
+    background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19)
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75)
+
+button:last-child
+  @include btnStyle(#000)
+  &:hover
+    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376)
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75)
+
+a
+  color: #747d8c
+  text-decoration: underline
